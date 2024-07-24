@@ -3,6 +3,7 @@ import dish1 from "../images/dish1.jpg";
 import dish2 from "../images/dish2.jpg";
 import dish3 from "../images/dish3.jpg";
 
+// Carousel component
 export default function CustomCarousel() {
   return (
     <div id="carouselExampleFade" className="carousel slide carousel-fade">
