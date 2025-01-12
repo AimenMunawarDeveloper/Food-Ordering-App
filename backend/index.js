@@ -1,14 +1,19 @@
 // set up express js here
-const express = require("express");
+import productRouter from "./routes/productRoute.js";
+import cors from "cors";
+import monogoDB from "./db.js";
+
+import express from "express";
+
 const app = express();
 const port = 5000; // front end port
-const mongoDB = require("./db"); // use require cause working on node js
-mongoDB();
+monogoDB();
+app.use(cors());
+app.use("/api/product", productRouter);
+
 app.get("/", (req, res) => {
   res.send("Hello world");
 });
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+app.listen(port, () => console.log("server listening at port 5000"));
 // 'nodemon' automatically reflect changes on backend
 // use mongoose to create schema in mongodb

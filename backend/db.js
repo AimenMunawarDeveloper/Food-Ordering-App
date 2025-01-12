@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const mongoURI = "mongodb+srv://foodHub:foodHub@cluster0.eyuqysf.mongodb.net/";
+import mongoose from "mongoose";
+const mongoURI = "mongodb://127.0.0.1:27017/foodhub";
 
 const mongoDB = async () => {
   try {
@@ -10,4 +10,4 @@ const mongoDB = async () => {
   }
 };
 
-module.exports = mongoDB;
+export default mongoDB;
