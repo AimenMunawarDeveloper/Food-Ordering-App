@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Card({
-  catgoryName,
+  categoryName,
   name,
   img,
   options = [],
@@ -15,20 +15,33 @@ export default function Card({
           className="card-img-top"
           alt="Dish"
           style={{ height: "18em" }}
+          data-testid="card-img"
         />
         <div className="card-body">
-          <h5 className="card-title">{name}</h5>
-          <p className="card-text">{catgoryName}</p>
-          <p className="card-text">{description}</p>
+          <h5 className="card-title" data-testid="card-title">
+            {name}
+          </h5>
+          <p className="card-text" data-testid="card-category">
+            {categoryName}
+          </p>
+          <p className="card-text" data-testid="card-description">
+            {description}
+          </p>
           <div className="d-flex align-items-center">
-            <select className="m-2 bg-success rounded">
+            <select
+              className="m-2 bg-success rounded"
+              data-testid="card-quantity"
+            >
               {Array.from(Array(6), (e, i) => (
                 <option key={i + 1} value={i + 1}>
                   {i + 1}
                 </option>
               ))}
             </select>
-            <select className="m-2 bg-success rounded">
+            <select
+              className="m-2 bg-success rounded"
+              data-testid="card-options"
+            >
               {options.map((option) => {
                 return (
                   <>
@@ -50,14 +63,16 @@ export default function Card({
                     )}
                     {option?.large && (
                       <option value={option?.large}>
-                        regular-{option?.large}
+                        large-{option?.large}
                       </option>
                     )}
                   </>
                 );
               })}
             </select>
-            <div className="fs-5 ms-2">Total Price</div>
+            <div className="fs-5 ms-2" data-testid="total-price">
+              Total Price
+            </div>
           </div>
         </div>
       </div>

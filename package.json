@@ -28,6 +28,9 @@
       "react-app/jest"
     ]
   },
+  "globals": {
+    "cy": "readonly"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -39,5 +42,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@cypress/react": "^9.0.0",
+    "@cypress/webpack-dev-server": "^4.0.1",
+    "cypress": "^13.17.0"
   }
 }
